@@ -1,2 +1,1 @@
-myWebsite
-=========# www.andreniet.de
+https://www.andreniet.de
