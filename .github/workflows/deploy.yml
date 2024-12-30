@@ -13,4 +13,4 @@ jobs:
       with:
         server: wp1108201.server-he.de
         username: ftp1108201-167027
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
