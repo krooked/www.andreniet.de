@@ -14,3 +14,6 @@ jobs:
         server: www.andreniet.de
         username: ftp1108201-167027
         password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        timeout: 60000  # Increase timeout to 60 seconds
+        passive: true 
