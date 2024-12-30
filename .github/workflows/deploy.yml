@@ -15,7 +15,6 @@ jobs:
        username: ftp1108201-167027
        password: ${{ secrets.FTP_PASSWORD }}
        security: strict
-       max-retries: 6
        protocol: ftps
        timeout: 300000
        server-dir: /
