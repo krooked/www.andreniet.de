@@ -12,7 +12,7 @@ jobs:
       - name: 📦 Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.server-he.de  # Changed to match SSL certificate
+          server: wp1108201.server-he.de
           username: ftp1108201-167027
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
