@@ -19,5 +19,5 @@ jobs:
           port: 21
           security: loose  # Changed to loose to handle certificate issues
           timeout: 60000
-          server-dir: ./
+          server-dir: ./www/
           local-dir: ./
