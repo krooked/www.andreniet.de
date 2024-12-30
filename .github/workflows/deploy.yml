@@ -12,13 +12,12 @@ jobs:
       - name: 📦 Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: www.andreniet.de
+          server: ftp.server-he.de  # Changed to match SSL certificate
           username: ftp1108201-167027
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps    # Using FTP-SSL (Explicit AUTH TLS)
-          port: 21         # Standard FTPS port
-          security: strict # Enable strict SSL/TLS
-          timeout: 60000   # Increase timeout to handle connection issues
-          server-dir: ./   # Root directory
-          local-dir: ./    # Local directory to deploy
-          charset: UTF-8   # Match the UTF-8 setting
+          protocol: ftps
+          port: 21
+          security: loose  # Changed to loose to handle certificate issues
+          timeout: 60000
+          server-dir: ./
+          local-dir: ./
