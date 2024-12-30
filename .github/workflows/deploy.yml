@@ -9,11 +9,13 @@ jobs:
       uses: actions/checkout@v4
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: wp1108201.server-he.de
-        username: ftp1108201-167027
-        password: ${{ secrets.FTP_PASSWORD }}
-        security: loose
-        protocol: ftps
-        log-level: verbose
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+  with:
+    server: wp1108201.server-he.de
+    username: ftp1108201-167027
+    password: ${{ secrets.FTP_PASSWORD }}
+    security: loose
+    protocol: ftps
+    log-level: verbose
+    max-retries: 3
+    timeout: 60000
