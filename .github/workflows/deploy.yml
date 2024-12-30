@@ -1,23 +1,28 @@
-name: 🚀 Deploy website
+name: CI -> Deploy to My website
 on:
   push:
-    branches: [ main ]
+    branches: [ main, development ]
 jobs:
-  web-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📂 Get latest code
-        uses: actions/checkout@v3
-      
-      - name: 📦 Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - uses: actions/checkout@v4
+      # Here is the deployment action
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: wp1108201.server-he.de
-          username: ftp1108201-167027
+          server: www.andreniet.de
+          user: ftp1108201-167027
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          security: loose  # Changed to loose to handle certificate issues
-          timeout: 60000
-          server-dir: ./www/
-          local-dir: ./
+          delete: "true"
+          max_retries: "7"
+          no_symlinks: "false"
+          ftp_ssl_allow: "true"
+          ftp_use_feat: "true"
+          ftp_nop_interval: "9"
+          net_max_retries: "0"
+          net_persist_retries: "11"
+          net_timeout: "13s"
+          dns_max_retries: "17"
+          dns_fatal_timeout: "never"
+          lftp_settings: "set cache:cache-empty-listings true; set cmd:status-interval 1s; set http:user-agent 'firefox';"
