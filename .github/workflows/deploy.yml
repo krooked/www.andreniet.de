@@ -16,3 +16,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         security: loose
         protocol: ftps
+        log-level: verbose
