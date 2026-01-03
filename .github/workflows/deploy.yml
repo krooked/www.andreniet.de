@@ -11,11 +11,10 @@ jobs:
    - name: 📂 Sync files
      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
      with:
-       server: ftp.andreniet.de
+       server: andreniet.de
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
-       dangerous-allow-any-host: true
-       security: strict
+       port: 21
        protocol: ftps
-       timeout: 300000
+       security: loose
        server-dir: /
