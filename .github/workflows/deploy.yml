@@ -14,6 +14,7 @@ jobs:
        server: ftp.andreniet.de
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
+       dangerous-allow-any-host: true
        security: strict
        protocol: ftps
        timeout: 300000
