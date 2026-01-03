@@ -11,7 +11,7 @@ jobs:
    - name: 📂 Sync files
      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
      with:
-       server: andreniet.de
+       server: ftp.andreniet.de
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
        security: strict
